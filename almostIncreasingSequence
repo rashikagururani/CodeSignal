@@ -1,0 +1,26 @@
+'''
+For question visit the link
+https://app.codesignal.com/arcade/intro/level-2/2mxbGwLzvkTCKAJMG/solutions?solutionId=tRxZ8RurmPkxX7yrF
+'''
+
+def almostIncreasingSequence(sequence):
+    points_to_where_sequence_breaks = -1  # keeps track of                                                 #where sequence breaks
+    counter = 0                         # how many changes we                                            #need for good sequence
+    for i in range(1, len(sequence)):
+        if sequence[i-1] >= sequence[i]:
+            points_to_where_sequence_breaks = i
+            counter +=1
+            
+    # simple scenario where we need more changes to 
+    #get desired increasing sequence
+    if counter > 1:
+        return False
+    # Where no changes is required,
+    if counter == 0:
+        return True
+    # Complicated scenarios - Edge Cases
+    if (points_to_where_sequence_breaks == 1 or              points_to_where_sequence_breaks == len(sequence)-1):
+        return True
+    if (sequence[points_to_where_sequence_breaks-1] < sequence[points_to_where_sequence_breaks +1] or sequence[points_to_where_sequence_breaks -2]< sequence[points_to_where_sequence_breaks]):
+        return True
+    return False
