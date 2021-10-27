@@ -1,0 +1,25 @@
+''' 
+For question visit the link - 
+https://app.codesignal.com/arcade/intro/level-2/xskq4ZxLyqQMCLshr/solutions?solutionId=zocEDWCfA9nptbugW 
+'''
+
+def matrixElementsSum(matrix):
+    no_of_rows_i = len(matrix)
+    # print('no_of_rows_i',no_of_rows_i)
+    no_of_columns_j = len(matrix[0])
+    # print('no_of_columns_j',no_of_columns_j)
+    empty=[]
+    
+    for i in range (no_of_columns_j):
+        # print('i',i)
+        for j in range (no_of_rows_i):
+            
+            # print('j',j)
+            if matrix[j][i] != 0:
+                empty.append(matrix[j][i])
+                # print(empty)
+            else:
+                # print('break')
+                break
+                
+    return sum(empty)            
