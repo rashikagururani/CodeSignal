@@ -1,11 +1,15 @@
 '''
 For question visit the link
-https://app.codesignal.com/arcade/intro/level-2/2mxbGwLzvkTCKAJMG/solutions?solutionId=tRxZ8RurmPkxX7yrF
+Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing 
+sequence by removing no more than one element from the array.
+
+Note: sequence a0, a1, ..., an is considered to be a strictly increasing if a0 < a1 < ... < an. 
+Sequence containing only one element is also considered to be strictly increasing.
 '''
 
 def almostIncreasingSequence(sequence):
-    points_to_where_sequence_breaks = -1  # keeps track of                                                 #where sequence breaks
-    counter = 0                         # how many changes we                                            #need for good sequence
+    points_to_where_sequence_breaks = -1  # keeps track of where sequence breaks
+    counter = 0                         # how many changes we need for good sequence
     for i in range(1, len(sequence)):
         if sequence[i-1] >= sequence[i]:
             points_to_where_sequence_breaks = i
