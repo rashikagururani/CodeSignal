@@ -1,0 +1,16 @@
+'''
+For question visit the link -
+https://app.codesignal.com/arcade/intro/level-2/bq2XnSr5kbHqpHGJC/solutions?solutionId=mKzqRpAGvygTDj9cP
+'''
+
+
+def makeArrayConsecutive2(statues):
+    empty = []
+    min_value = min(statues)
+    max_value = max(statues)
+    
+    for i in range(min_value, max_value+1):
+        if i not in statues:
+            empty.append(i)
+            
+    return len(empty)
